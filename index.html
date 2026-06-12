@@ -620,6 +620,160 @@
       line-height: 1.35;
     }
 
+    .ai-material-showcase {
+      margin-top: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(49, 87, 213, 0.15);
+      background:
+        linear-gradient(135deg, rgba(20, 32, 51, 0.96), rgba(17, 80, 77, 0.92)),
+        #111827;
+      box-shadow: 0 18px 42px rgba(20, 32, 51, 0.12);
+    }
+
+    .ai-material-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    .ai-material-head h4 {
+      margin: 6px 0 8px;
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1.16;
+    }
+
+    .ai-material-head p {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.58;
+    }
+
+    .ai-material-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 13px;
+      border-radius: 999px;
+      color: #c9fff2;
+      background: rgba(0, 168, 143, 0.16);
+      border: 1px solid rgba(201, 255, 242, 0.2);
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .ai-video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .ai-video-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 0;
+      border-radius: 8px;
+      background: #050b13;
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.28);
+      isolation: isolate;
+    }
+
+    .ai-video-card video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      height: auto;
+      object-fit: cover;
+      background: #050b13;
+    }
+
+    .ai-video-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(5, 11, 19, 0.04), rgba(5, 11, 19, 0) 40%, rgba(5, 11, 19, 0.78));
+      transition: opacity 0.2s ease;
+    }
+
+    .ai-video-card.is-playing::after {
+      opacity: 0;
+    }
+
+    .ai-play {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      z-index: 3;
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.28);
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .ai-play::before {
+      content: "";
+      width: 0;
+      height: 0;
+      margin-left: 4px;
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
+      border-left: 17px solid #142033;
+    }
+
+    .ai-video-card.is-playing .ai-play {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.92);
+    }
+
+    .ai-video-copy {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 2;
+      color: #ffffff;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .ai-video-copy b {
+      display: block;
+      font-size: 13px;
+      line-height: 1.24;
+    }
+
+    .ai-video-copy span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .ai-video-card.is-playing .ai-video-copy {
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+    }
+
     ul {
       margin: 0;
       padding-left: 18px;
@@ -1391,6 +1545,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .ai-video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .replica-stack {
         grid-template-rows: auto;
       }
@@ -1411,6 +1569,8 @@
       .proof-board,
       .content-flow,
       .creator-wall,
+      .ai-material-head,
+      .ai-video-grid,
       .module-list {
         grid-template-columns: 1fr;
       }
@@ -1425,6 +1585,11 @@
 
       .replica-card {
         grid-template-columns: 1fr;
+      }
+
+      .ai-material-badge {
+        width: 100%;
+        white-space: normal;
       }
 
       .replica-visual {
@@ -1573,6 +1738,57 @@
                 <img src="assets/curvvvy/hero_02.jpg" alt="Curvvvy campaign landing content">
                 <div class="creator-play">▶</div>
                 <div class="creator-caption"><b>Campaign assets</b><span>广告图 / 落地页内容</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-material-showcase">
+            <div class="ai-material-head">
+              <div>
+                <span class="proof-kicker">AI creative samples</span>
+                <h4>AI 素材实战样片</h4>
+                <p>
+                  以下视频展示我们在宠物、睡眠、家居等垂直赛道中沉淀的 AI 视频素材能力：从卖点脚本、场景生成、产品演示到短视频剪辑，可快速进入广告测试和社媒分发。
+                </p>
+              </div>
+              <div class="ai-material-badge">AI generated commerce creative</div>
+            </div>
+
+            <div class="ai-video-grid" aria-label="AI 素材视频样片">
+              <div class="ai-video-card">
+                <video controls playsinline preload="metadata" poster="assets/ai_creatives/ai_creative_01_poster.jpg">
+                  <source src="assets/ai_creatives/ai_creative_01.mp4" type="video/mp4">
+                  当前浏览器不支持视频播放。
+                </video>
+                <button class="ai-play" type="button" aria-label="播放宠物出行 AI 素材"></button>
+                <div class="ai-video-copy"><b>Pet lifestyle hook</b><span>宠物出行 / 痛点开场</span></div>
+              </div>
+
+              <div class="ai-video-card">
+                <video controls playsinline preload="metadata" poster="assets/ai_creatives/ai_creative_02_poster.jpg">
+                  <source src="assets/ai_creatives/ai_creative_02.mp4" type="video/mp4">
+                  当前浏览器不支持视频播放。
+                </video>
+                <button class="ai-play" type="button" aria-label="播放睡眠家居 AI 素材"></button>
+                <div class="ai-video-copy"><b>Sleep product demo</b><span>睡眠家居 / 功能演示</span></div>
+              </div>
+
+              <div class="ai-video-card">
+                <video controls playsinline preload="metadata" poster="assets/ai_creatives/ai_creative_03_poster.jpg">
+                  <source src="assets/ai_creatives/ai_creative_03.mp4" type="video/mp4">
+                  当前浏览器不支持视频播放。
+                </video>
+                <button class="ai-play" type="button" aria-label="播放宠物用品 AI 素材"></button>
+                <div class="ai-video-copy"><b>Product scenario</b><span>产品场景 / 使用讲解</span></div>
+              </div>
+
+              <div class="ai-video-card">
+                <video controls playsinline preload="metadata" poster="assets/ai_creatives/ai_creative_04_poster.jpg">
+                  <source src="assets/ai_creatives/ai_creative_04.mp4" type="video/mp4">
+                  当前浏览器不支持视频播放。
+                </video>
+                <button class="ai-play" type="button" aria-label="播放手持种草 AI 素材"></button>
+                <div class="ai-video-copy"><b>UGC product pitch</b><span>手持种草 / 卖点表达</span></div>
               </div>
             </div>
           </div>
@@ -1827,5 +2043,28 @@
       </article>
     </section>
   </main>
+  <script>
+    document.querySelectorAll(".ai-video-card").forEach((card) => {
+      const video = card.querySelector("video");
+      const playButton = card.querySelector(".ai-play");
+
+      if (!video || !playButton) return;
+
+      const syncState = () => {
+        card.classList.toggle("is-playing", !video.paused && !video.ended);
+      };
+
+      playButton.addEventListener("click", () => {
+        document.querySelectorAll(".ai-video-card video").forEach((otherVideo) => {
+          if (otherVideo !== video) otherVideo.pause();
+        });
+        video.play().catch(() => {});
+      });
+
+      video.addEventListener("play", syncState);
+      video.addEventListener("pause", syncState);
+      video.addEventListener("ended", syncState);
+    });
+  </script>
 </body>
 </html>
