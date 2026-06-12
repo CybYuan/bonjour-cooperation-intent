@@ -500,6 +500,48 @@
       text-decoration: none;
     }
 
+    .reference-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .reference-metric {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(49, 87, 213, 0.14);
+      background: rgba(49, 87, 213, 0.055);
+    }
+
+    .reference-metric strong {
+      display: block;
+      color: var(--blue);
+      font-size: 24px;
+      line-height: 1.04;
+    }
+
+    .reference-metric span {
+      display: block;
+      margin-top: 5px;
+      color: #526176;
+      font-size: 11px;
+      font-weight: 850;
+      line-height: 1.35;
+    }
+
+    .reference-note {
+      color: #7a8799;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .reference-note a {
+      color: #526176;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
     .device-phone,
     .device-desktop {
       position: relative;
@@ -604,6 +646,29 @@
     .proof-left-stack {
       display: grid;
       gap: 14px;
+    }
+
+    .validated-header {
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 168, 143, 0.18);
+      background: linear-gradient(135deg, rgba(0, 168, 143, 0.10), rgba(49, 87, 213, 0.07)), #ffffff;
+      box-shadow: 0 12px 28px rgba(20, 32, 51, 0.045);
+    }
+
+    .validated-header b {
+      display: block;
+      margin-top: 8px;
+      color: var(--navy);
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .validated-header p {
+      margin: 6px 0 0;
+      color: #526176;
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     .curvvvy-milestone {
@@ -1200,12 +1265,33 @@
               <p>
                 以日韩美妆、个护和亚洲生活方式商品切入，并逐步延展到 fashion、配饰和多品类消费场景，是双方可共同探索的 DTC 聚合模式参考。
               </p>
+              <div class="reference-metrics">
+                <div class="reference-metric">
+                  <strong>US$347M</strong>
+                  <span>2025 YesStyle B2C revenue</span>
+                </div>
+                <div class="reference-metric">
+                  <strong>US$501M</strong>
+                  <span>2025 group revenue</span>
+                </div>
+              </div>
+              <p class="reference-note">
+                公开对标量级，来源为
+                <a href="https://www.yesasiaholdings.com/pdf/e_2209_Annualresultannouncement2025.pdf" target="_blank" rel="noreferrer">YesAsia Holdings 2025 Annual Results</a>；
+                可作为美妆护肤 DTC 聚合平台的长期参考。
+              </p>
               <a class="reference-link" href="https://www.yesstyle.com/" target="_blank" rel="noreferrer">yesstyle.com</a>
             </div>
           </div>
 
           <div class="proof-board">
             <div class="proof-left-stack">
+              <div class="validated-header">
+                <span class="proof-kicker">Internal validated projects</span>
+                <b>我们内部已经验证的项目</b>
+                <p>以下项目已在真实电商业务中验证过选品、建站、内容投放和规模化运营能力。</p>
+              </div>
+
               <div class="proof-card">
                 <div class="proof-visual">
                   <div class="device-desktop">
