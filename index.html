@@ -910,6 +910,7 @@
       align-content: space-between;
       min-height: 272px;
       padding: 22px;
+      gap: 16px;
       overflow: hidden;
       border-radius: 8px;
       border: 1px solid rgba(49, 87, 213, 0.16);
@@ -917,6 +918,25 @@
         linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(241, 248, 255, 0.95)),
         linear-gradient(90deg, rgba(49, 87, 213, 0.08), rgba(0, 168, 143, 0.08));
       box-shadow: 0 14px 34px rgba(20, 32, 51, 0.055);
+    }
+
+    .curvvvy-visual {
+      display: grid;
+      place-items: center;
+      margin: -6px -6px 0;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(220, 229, 239, 0.9);
+      background: #f8fbff;
+    }
+
+    .curvvvy-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 7px;
+      object-fit: contain;
+      object-position: center;
     }
 
     .curvvvy-milestone h4 {
@@ -1621,6 +1641,9 @@
               </div>
 
               <div class="curvvvy-milestone">
+                <div class="curvvvy-visual">
+                  <img src="assets/composites/curvvvy_product_composite.png" alt="Curvvvy product and creator content system">
+                </div>
                 <div>
                   <span class="proof-kicker">Brand launch proof</span>
                   <h4>Curvvvy.com</h4>
