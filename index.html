@@ -290,6 +290,7 @@
     }
 
     .solution-dtc {
+      padding: 36px;
       background:
         radial-gradient(circle at 90% 6%, rgba(0, 168, 143, 0.14), transparent 34%),
         linear-gradient(135deg, #ffffff, #f2fffb 55%, #f8fbff);
@@ -384,6 +385,239 @@
 
     .card p:last-child {
       margin-bottom: 0;
+    }
+
+    .solution-dtc .section-head {
+      margin-bottom: 28px;
+    }
+
+    .solution-dtc .two-col {
+      gap: 22px;
+    }
+
+    .solution-dtc .card {
+      padding: 24px;
+      border-color: rgba(49, 87, 213, 0.16);
+      box-shadow: 0 14px 34px rgba(20, 32, 51, 0.055);
+    }
+
+    .solution-dtc .card h4 {
+      margin-bottom: 14px;
+      font-size: 22px;
+      line-height: 1.18;
+    }
+
+    .solution-dtc .card p,
+    .solution-dtc .card li {
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    .dtc-part-head {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      margin: 28px 0 14px;
+      padding: 16px 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(49, 87, 213, 0.13);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 10px 26px rgba(20, 32, 51, 0.045);
+    }
+
+    .dtc-part-head:first-of-type {
+      margin-top: 0;
+    }
+
+    .dtc-part-head span {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--blue);
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    .dtc-part-head b {
+      display: block;
+      color: var(--navy);
+      font-size: 21px;
+      line-height: 1.18;
+    }
+
+    .dtc-part-head p {
+      margin: 5px 0 0;
+      color: #526176;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .content-lab {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
+      gap: 22px;
+      align-items: stretch;
+      padding: 22px;
+      border-radius: 8px;
+      border: 1px solid rgba(49, 87, 213, 0.15);
+      background: linear-gradient(135deg, #ffffff, #f7fbff);
+      box-shadow: 0 18px 42px rgba(20, 32, 51, 0.07);
+    }
+
+    .content-lab-copy {
+      display: grid;
+      align-content: center;
+      gap: 16px;
+      padding: 6px 4px;
+    }
+
+    .content-lab-copy h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 26px;
+      line-height: 1.14;
+    }
+
+    .content-lab-copy p {
+      margin: 0;
+      color: #526176;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .content-proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .content-proof-list li {
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      color: #2f3b4d;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .content-proof-list i {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      color: #ffffff;
+      background: #00a88f;
+      font-style: normal;
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .creator-wall {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .creator-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 250px;
+      border-radius: 8px;
+      background: #101828;
+      box-shadow: 0 14px 34px rgba(20, 32, 51, 0.16);
+    }
+
+    .creator-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(1.04);
+    }
+
+    .creator-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(16, 24, 40, 0.05), rgba(16, 24, 40, 0.02) 42%, rgba(16, 24, 40, 0.78));
+    }
+
+    .creator-play {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: #ffffff;
+      background: rgba(20, 32, 51, 0.68);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
+      font-size: 14px;
+    }
+
+    .creator-caption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 2;
+      color: #ffffff;
+    }
+
+    .creator-caption b {
+      display: block;
+      font-size: 14px;
+      line-height: 1.22;
+    }
+
+    .creator-caption span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .content-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .content-flow div {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 168, 143, 0.18);
+      background: rgba(0, 168, 143, 0.07);
+    }
+
+    .content-flow b {
+      display: block;
+      color: #0d4f46;
+      font-size: 13px;
+    }
+
+    .content-flow span {
+      display: block;
+      margin-top: 4px;
+      color: #526176;
+      font-size: 11px;
+      line-height: 1.35;
     }
 
     ul {
@@ -1119,6 +1353,7 @@
 
       .hero,
       .two-col,
+      .content-lab,
       .reference-case,
       .model-grid,
       .timeline,
@@ -1129,6 +1364,10 @@
       }
 
       .module-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .creator-wall {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -1150,7 +1389,13 @@
       .cooperation-map,
       .image-row,
       .proof-board,
+      .content-flow,
+      .creator-wall,
       .module-list {
+        grid-template-columns: 1fr;
+      }
+
+      .dtc-part-head {
         grid-template-columns: 1fr;
       }
 
@@ -1232,6 +1477,14 @@
             <span>DTC site replication</span>
           </div>
 
+          <div class="dtc-part-head">
+            <span>01</span>
+            <div>
+              <b>合作模式与资源匹配</b>
+              <p>先讲清楚项目要怎么做，以及为什么卓悦的供应链和我们的电商 AI 能力能形成互补。</p>
+            </div>
+          </div>
+
           <div class="two-col">
             <div class="card">
               <h4>合作目标</h4>
@@ -1250,6 +1503,65 @@
                 <li>香港零售品牌背书有助于供应链谈判、品牌授权和客户信任。</li>
                 <li>可将 DTC 与 AI 电商能力延展至卓悦合作品牌和供应链伙伴。</li>
               </ul>
+            </div>
+          </div>
+
+          <div class="dtc-part-head">
+            <span>02</span>
+            <div>
+              <b>红人内容与素材营销能力</b>
+              <p>我们不只是做 AI 工具，也长期在真实消费品电商里做内容、红人、素材生产和广告转化测试。</p>
+            </div>
+          </div>
+
+          <div class="content-lab">
+            <div class="content-lab-copy">
+              <span class="proof-kicker">Creator commerce engine</span>
+              <h4>从红人内容到投放素材的完整链路</h4>
+              <p>
+                团队可以同时处理红人合作、真人试穿/试用素材、AI 辅助剪辑、广告素材变体和落地页内容，形成从内容生产到转化验证的闭环。
+              </p>
+              <ul class="content-proof-list">
+                <li><i>1</i><div>红人/达人内容：适合 TikTok、Instagram Reels、Facebook 等渠道的真人种草与带货素材。</div></li>
+                <li><i>2</i><div>AI + 真人素材：用 AI 快速生成脚本、卖点、剪辑结构和素材变体，提高内容测试速度。</div></li>
+                <li><i>3</i><div>投放闭环：内容素材进入目录广告、落地页和复购触达，按 CPA、ROAS 和转化率持续优化。</div></li>
+              </ul>
+              <div class="content-flow">
+                <div><b>Brief</b><span>红人脚本 / 卖点结构</span></div>
+                <div><b>Produce</b><span>真人素材 / AI 剪辑变体</span></div>
+                <div><b>Scale</b><span>广告测试 / 落地页转化</span></div>
+              </div>
+            </div>
+
+            <div class="creator-wall" aria-label="红人带货与内容素材示例">
+              <div class="creator-card">
+                <img src="assets/curvvvy/product_01.webp" alt="Curvvvy creator try-on content">
+                <div class="creator-play">▶</div>
+                <div class="creator-caption"><b>Creator try-on</b><span>真人试穿 / 尺码卖点</span></div>
+              </div>
+              <div class="creator-card">
+                <img src="assets/curvvvy/product_02.webp" alt="Curvvvy fit comparison content">
+                <div class="creator-play">▶</div>
+                <div class="creator-caption"><b>Fit comparison</b><span>身材效果 / 转化素材</span></div>
+              </div>
+              <div class="creator-card">
+                <img src="assets/curvvvy/product_03.webp" alt="Curvvvy lifestyle creator content">
+                <div class="creator-play">▶</div>
+                <div class="creator-caption"><b>Lifestyle UGC</b><span>生活场景 / 社媒种草</span></div>
+              </div>
+              <div class="creator-card">
+                <img src="assets/curvvvy/hero_02.jpg" alt="Curvvvy campaign landing content">
+                <div class="creator-play">▶</div>
+                <div class="creator-caption"><b>Campaign assets</b><span>广告图 / 落地页内容</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dtc-part-head">
+            <span>03</span>
+            <div>
+              <b>对标规模与内部验证项目</b>
+              <p>YesStyle 展示长期规模参考；Chiclara 和 Curvvvy 展示我们已跑通过的真实项目能力。</p>
             </div>
           </div>
 
