@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>卓悦合作意向方案 - HTML 预览</title>
+  <style>
+    :root {
+      --ink: #142033;
+      --muted: #667085;
+      --line: #dce5ef;
+      --paper: #f3f6fb;
+      --panel: #ffffff;
+      --soft: #f8fbff;
+      --navy: #172033;
+      --blue: #3157d5;
+      --mint: #00a88f;
+      --gold: #f6a523;
+      --rose: #f0527d;
+      --shadow: 0 24px 70px rgba(20, 32, 51, 0.11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin-top: 0;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 340px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 28px;
+      border-right: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .sidebar h1 {
+      margin-bottom: 12px;
+      font-size: 29px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .nav {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .nav a {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 10px;
+      align-items: center;
+      min-height: 58px;
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: #fff;
+      text-decoration: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .nav a:hover {
+      border-color: rgba(49, 87, 213, 0.32);
+      box-shadow: 0 10px 24px rgba(20, 32, 51, 0.08);
+      transform: translateY(-1px);
+    }
+
+    .nav b {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--blue);
+      font-size: 12px;
+    }
+
+    .nav strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .nav span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    .side-card {
+      padding: 15px;
+      border-radius: 8px;
+      background: #f3fffb;
+      border: 1px solid rgba(0, 168, 143, 0.2);
+      color: #24423b;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .preview-shell {
+      height: 100vh;
+      overflow: auto;
+      padding: 32px;
+      background:
+        radial-gradient(circle at 92% 6%, rgba(0, 168, 143, 0.10), transparent 32%),
+        radial-gradient(circle at 8% 24%, rgba(49, 87, 213, 0.09), transparent 30%),
+        linear-gradient(180deg, rgba(243, 246, 251, 0.98), rgba(249, 251, 255, 0.98));
+    }
+
+    .document {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding: 40px;
+      border: 1px solid rgba(49, 87, 213, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: stretch;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero h2 {
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .hero-highlight {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(49, 87, 213, 0.07), rgba(0, 168, 143, 0.09));
+      border: 1px solid rgba(49, 87, 213, 0.14);
+      color: #1f2f46;
+      font-size: 16px;
+      line-height: 1.58;
+      font-weight: 850;
+    }
+
+    .cooperation-map {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.92fr;
+      gap: 14px;
+    }
+
+    .route-card {
+      min-height: 146px;
+      padding: 18px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid rgba(49, 87, 213, 0.14);
+      box-shadow: 0 14px 34px rgba(20, 32, 51, 0.06);
+    }
+
+    .route-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 18px;
+      line-height: 1.26;
+      letter-spacing: 0;
+    }
+
+    .route-card span {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: rgba(49, 87, 213, 0.08);
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .route-card p {
+      margin: 0;
+      color: #526176;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .route-card.principle {
+      background: linear-gradient(135deg, rgba(0, 168, 143, 0.1), rgba(49, 87, 213, 0.08)), #fff;
+    }
+
+    .route-card.principle span {
+      color: #007d69;
+      background: rgba(0, 168, 143, 0.1);
+    }
+
+    .section {
+      padding: 24px 0;
+      border-bottom: 0;
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .solution-frame {
+      position: relative;
+      margin: 28px 0;
+      padding: 28px;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(49, 87, 213, 0.16);
+      box-shadow: 0 24px 60px rgba(20, 32, 51, 0.08);
+    }
+
+    .solution-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(20, 32, 51, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 32, 51, 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 76%);
+    }
+
+    .solution-frame > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .solution-dtc {
+      background:
+        radial-gradient(circle at 90% 6%, rgba(0, 168, 143, 0.14), transparent 34%),
+        linear-gradient(135deg, #ffffff, #f2fffb 55%, #f8fbff);
+    }
+
+    .solution-ai {
+      color: #eef5ff;
+      background:
+        radial-gradient(circle at 86% 12%, rgba(0, 168, 143, 0.22), transparent 34%),
+        linear-gradient(135deg, #121b2d, #102522 62%, #182033);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .solution-ai .section-head h3,
+    .solution-ai .card h4,
+    .solution-ai .module b {
+      color: #ffffff;
+    }
+
+    .solution-ai .section-head span {
+      color: rgba(248, 251, 255, 0.58);
+    }
+
+    .solution-ai .card,
+    .solution-ai .module {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.13);
+      box-shadow: none;
+    }
+
+    .solution-ai .card p,
+    .solution-ai .card li,
+    .solution-ai .module span {
+      color: rgba(248, 251, 255, 0.72);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .section-head span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 18px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 28px rgba(20, 32, 51, 0.04);
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .card p,
+    .card li {
+      color: #435269;
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .card p {
+      margin-bottom: 10px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .image-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+      align-items: start;
+    }
+
+    .image-card {
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(20, 32, 51, 0.04);
+    }
+
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 12px;
+      object-fit: contain;
+      object-position: center;
+      background: #f7faff;
+    }
+
+    .image-card div {
+      padding: 10px 12px;
+      color: #334158;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .site-pair {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 12px;
+      background: #f7faff;
+    }
+
+    .site-pair img {
+      width: 100%;
+      height: auto;
+      padding: 0;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    .reference-case {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
+      gap: 0;
+      overflow: hidden;
+      margin-top: 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(49, 87, 213, 0.14);
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(20, 32, 51, 0.055);
+    }
+
+    .reference-visual {
+      display: grid;
+      place-items: center;
+      min-height: 360px;
+      padding: 18px;
+      border-right: 1px solid rgba(220, 229, 239, 0.92);
+      background:
+        linear-gradient(135deg, rgba(49, 87, 213, 0.06), rgba(0, 168, 143, 0.07)),
+        #f8fbff;
+    }
+
+    .reference-copy {
+      display: grid;
+      align-content: center;
+      gap: 8px;
+      padding: 24px;
+    }
+
+    .reference-copy h4 {
+      margin: 4px 0 0;
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.12;
+    }
+
+    .reference-copy p {
+      margin: 0;
+      color: #526176;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .reference-link {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 4px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .device-phone,
+    .device-desktop {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(20, 32, 51, 0.12);
+      background: #ffffff;
+      box-shadow: 0 18px 34px rgba(20, 32, 51, 0.12);
+    }
+
+    .device-phone {
+      width: min(100%, 188px);
+      padding: 7px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, #192033, #090d16);
+    }
+
+    .device-phone img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 19px;
+      background: #fff;
+    }
+
+    .device-phone::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      width: 46px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .device-phone.small {
+      width: min(100%, 138px);
+      border-radius: 22px;
+      padding: 6px;
+      box-shadow: 0 12px 24px rgba(20, 32, 51, 0.12);
+    }
+
+    .device-phone.small img {
+      border-radius: 16px;
+    }
+
+    .device-desktop {
+      width: 100%;
+      padding: 24px 8px 8px;
+      border-radius: 11px;
+    }
+
+    .device-desktop::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 11px;
+      width: 42px;
+      height: 8px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle, #ff6b6b 0 3px, transparent 4px),
+        radial-gradient(circle at 18px 50%, #f6c453 0 3px, transparent 4px),
+        radial-gradient(circle at 34px 50%, #43d17a 0 3px, transparent 4px);
+    }
+
+    .device-desktop img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    .proof-board {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+      gap: 18px;
+      margin-top: 20px;
+      padding: 18px;
+      align-items: start;
+      border: 1px solid rgba(0, 168, 143, 0.18);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(246, 252, 255, 0.92)),
+        radial-gradient(circle at 8% 10%, rgba(0, 168, 143, 0.12), transparent 34%);
+      box-shadow: 0 18px 46px rgba(20, 32, 51, 0.075);
+    }
+
+    .proof-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(49, 87, 213, 0.14);
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(20, 32, 51, 0.06);
+    }
+
+    .proof-visual,
+    .replica-visual {
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, rgba(49, 87, 213, 0.06), rgba(0, 168, 143, 0.07)),
+        #f8fbff;
+    }
+
+    .proof-card img,
+    .replica-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .proof-visual {
+      min-height: 178px;
+      padding: 14px;
+      border-bottom: 1px solid rgba(220, 229, 239, 0.92);
+    }
+
+    .proof-copy {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+      padding: 18px;
+    }
+
+    .proof-kicker,
+    .replica-kicker,
+    .replica-tag {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #007d69;
+      background: rgba(0, 168, 143, 0.10);
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .proof-copy h4 {
+      margin: 10px 0 6px;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1.05;
+    }
+
+    .proof-copy p {
+      max-width: 440px;
+      margin: 0;
+      color: #526176;
+      font-size: 14px;
+      line-height: 1.58;
+    }
+
+    .proof-stat {
+      display: inline-flex;
+      width: fit-content;
+      align-items: baseline;
+      gap: 8px;
+      padding: 11px 14px;
+      border-radius: 8px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #3157d5, #1936a8);
+      box-shadow: 0 10px 24px rgba(49, 87, 213, 0.24);
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .proof-stat small {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .replica-stack {
+      display: grid;
+      grid-template-rows: auto 1fr 1fr;
+      gap: 12px;
+      min-height: 100%;
+    }
+
+    .replica-header {
+      padding: 15px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 168, 143, 0.16);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .replica-header b {
+      display: block;
+      margin-top: 9px;
+      color: var(--navy);
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .replica-header p {
+      margin: 6px 0 0;
+      color: #526176;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .replica-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(130px, 0.65fr);
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 168, 143, 0.16);
+      background: #ffffff;
+      box-shadow: 0 12px 30px rgba(20, 32, 51, 0.055);
+    }
+
+    .replica-visual {
+      min-height: 132px;
+      padding: 10px;
+      border-right: 1px solid rgba(220, 229, 239, 0.92);
+    }
+
+    .replica-card.phone-case .replica-visual {
+      min-height: 232px;
+    }
+
+    .replica-card div:not(.replica-visual) {
+      display: grid;
+      align-content: center;
+      gap: 7px;
+      padding: 14px;
+    }
+
+    .replica-card b {
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.18;
+    }
+
+    .replica-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.42;
+    }
+
+    .model-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .budget-box {
+      padding: 22px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #102522, #173f39);
+      color: #f8fbff;
+    }
+
+    .budget-box h4 {
+      margin-bottom: 12px;
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .budget-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #79ffd8;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .budget-box p,
+    .budget-box li {
+      color: rgba(248, 251, 255, 0.78);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .demo-panel {
+      padding: 20px;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(20, 32, 51, 0.97), rgba(15, 48, 57, 0.95)),
+        #142033;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .demo-panel h4 {
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: 21px;
+    }
+
+    .demo-panel p {
+      color: rgba(248, 251, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .video-frame {
+      margin-top: 16px;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #000;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .module-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .module {
+      padding: 15px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .module b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .module span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stage {
+      padding: 17px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .stage b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 16px;
+    }
+
+    .stage span {
+      color: #46556c;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .next-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .next-card {
+      padding: 18px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 28px rgba(20, 32, 51, 0.04);
+    }
+
+    .next-card b {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--blue);
+      font-size: 15px;
+    }
+
+    .next-card span {
+      color: #46556c;
+      font-size: 13px;
+      line-height: 1.52;
+    }
+
+    .question-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: question;
+    }
+
+    .question-list li {
+      counter-increment: question;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: #344258;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .question-list li::before {
+      content: counter(question);
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--mint);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .summary {
+      padding: 22px;
+      border-radius: 8px;
+      color: #102522;
+      background: linear-gradient(90deg, rgba(0, 168, 143, 0.12), rgba(49, 87, 213, 0.11));
+      border: 1px solid rgba(0, 168, 143, 0.18);
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 850;
+    }
+
+    @media (max-width: 980px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .preview-shell {
+        height: auto;
+        padding: 18px;
+      }
+
+      .document {
+        padding: 26px;
+      }
+
+      .hero,
+      .two-col,
+      .reference-case,
+      .model-grid,
+      .timeline,
+      .next-steps,
+      .proof-board,
+      .cooperation-map {
+        grid-template-columns: 1fr;
+      }
+
+      .module-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .replica-stack {
+        grid-template-rows: auto;
+      }
+
+      .reference-visual {
+        border-right: 0;
+        border-bottom: 1px solid rgba(220, 229, 239, 0.92);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero h2 {
+        font-size: 34px;
+      }
+
+      .cooperation-map,
+      .image-row,
+      .proof-board,
+      .module-list {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-copy {
+        grid-template-columns: 1fr;
+      }
+
+      .replica-card {
+        grid-template-columns: 1fr;
+      }
+
+      .replica-visual {
+        border-right: 0;
+        border-bottom: 1px solid rgba(220, 229, 239, 0.92);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar">
+      <p class="eyebrow">Bonjour Cooperation</p>
+      <h1>卓悦合作意向方案</h1>
+      <p class="intro">
+        右侧是可直接展示和讨论的 HTML 方案稿。内容围绕两条主线：共同做 AI 铺货垂直 DTC 项目，以及共同投资和产品化 AI Commerce OS。
+      </p>
+
+      <nav class="nav" aria-label="方案导航">
+        <a href="#overview"><b>01</b><div><strong>合作总定位</strong><span>业务项目 + AI 产品化</span></div></a>
+        <a href="#dtc"><b>02</b><div><strong>AI 铺货 DTC 站</strong><span>YesStyle 模式 / 多赛道复制</span></div></a>
+        <a href="#model"><b>03</b><div><strong>试点项目机制</strong><span>预算、分成、加码判断</span></div></a>
+        <a href="#ai"><b>04</b><div><strong>AI 项目投资</strong><span>AI Commerce OS + Demo</span></div></a>
+        <a href="#go-to-market"><b>05</b><div><strong>对外服务客户</strong><span>品牌出海 / 电商化企业</span></div></a>
+        <a href="#next"><b>06</b><div><strong>下一步</strong><span>先碰意向，再深化</span></div></a>
+      </nav>
+
+      <div class="side-card">
+        Demo 已嵌入右侧「AI 项目投资」板块。视频文件已复制到项目目录：<br>
+        <strong>assets/demo/ai_commerce_demo.mp4</strong>
+      </div>
+    </aside>
+
+    <section class="preview-shell" aria-label="右侧方案预览窗">
+      <article class="document">
+        <section class="hero" id="overview">
+          <div>
+            <p class="eyebrow">Cooperation Intent Proposal</p>
+            <h2>与卓悦（香港）合作意向方案</h2>
+            <p class="hero-copy">
+              本方案围绕卓悦的供应链、品牌和客户资源，设计两条可并行推进的合作路径：一条面向真实 DTC 项目落地，一条面向 AI 电商系统产品化。
+            </p>
+            <div class="hero-highlight">
+              总体合作方式：先用小范围业务试点验证结果，再根据数据决定项目分成、合资、资源绑定或 AI 产品投资深度。
+            </div>
+          </div>
+
+          <div class="cooperation-map">
+            <div class="route-card">
+              <span>Path A</span>
+              <strong>AI 铺货垂直 DTC 项目</strong>
+              <p>以真实站点为单位合作，利用卓悦日韩美妆个护供应链和我们的自动化铺货、投放、素材系统，持续复制垂直站点；电商项目可按共同投资方式推进。</p>
+            </div>
+            <div class="route-card">
+              <span>Path B</span>
+              <strong>AI Commerce OS 产品化</strong>
+              <p>把内部已经验证的建站、商品库、投放、素材、EDM 等 AI 能力产品化，形成可投资、可服务客户的系统。</p>
+            </div>
+            <div class="route-card principle">
+              <span>Principle</span>
+              <strong>先验证，再绑定</strong>
+              <p>预算、分成和权益安排放在具体项目层面讨论；顶层先明确合作路径和双方资源互补关系。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section solution-frame solution-dtc" id="dtc">
+          <div class="section-head">
+            <h3>方案一：合作 AI 铺货垂直 DTC 独立站</h3>
+            <span>DTC site replication</span>
+          </div>
+
+          <div class="two-col">
+            <div class="card">
+              <h4>合作目标</h4>
+              <p>
+                双方共同建立可复制的垂直 DTC 独立站项目机制。以 chiclara.com 为参考，通过数据选品、供应链接入、AI 自动铺货、目录广告和内容素材自动化，持续复制垂直赛道。
+              </p>
+              <p>
+                与卓悦的第一阶段可探索类似 yesstyle.com 的模式：以日韩美妆护肤和个护切入，再扩展到服装、配饰和 lifestyle 品类。项目可按共同投资、独立核算和收益分成推进。
+              </p>
+            </div>
+
+            <div class="card">
+              <h4>为什么卓悦适合成为合作方</h4>
+              <ul>
+                <li>具备日韩美妆护肤、个护及亚洲生活方式商品供应链资源。</li>
+                <li>香港零售品牌背书有助于供应链谈判、品牌授权和客户信任。</li>
+                <li>可将 DTC 与 AI 电商能力延展至卓悦合作品牌和供应链伙伴。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="reference-case">
+            <div class="reference-visual">
+              <div class="device-phone">
+                <img src="assets/reference/yesstyle_mobile_raw.png" alt="YesStyle mobile reference model">
+              </div>
+            </div>
+            <div class="reference-copy">
+              <span class="proof-kicker">Reference model</span>
+              <h4>YesStyle</h4>
+              <p>
+                以日韩美妆、个护和亚洲生活方式商品切入，并逐步延展到 fashion、配饰和多品类消费场景，是双方可共同探索的 DTC 聚合模式参考。
+              </p>
+              <a class="reference-link" href="https://www.yesstyle.com/" target="_blank" rel="noreferrer">yesstyle.com</a>
+            </div>
+          </div>
+
+          <div class="proof-board">
+            <div class="proof-card">
+              <div class="proof-visual">
+                <div class="device-desktop">
+                  <img src="assets/chiclara/chiclara_benchmark_card.png" alt="Chiclara benchmark">
+                </div>
+              </div>
+              <div class="proof-copy">
+                <div>
+                  <span class="proof-kicker">Benchmark proof</span>
+                  <h4>Chiclara</h4>
+                  <p>已验证的垂直 DTC 站点样板，用于复制选品、铺货、目录广告和内容生产方法。</p>
+                </div>
+                <div class="proof-stat"><small>Annual GMV</small> US$5M</div>
+              </div>
+            </div>
+
+            <div class="replica-stack">
+              <div class="replica-header">
+                <span class="replica-kicker">Replication pipeline</span>
+                <b>从单一成功样板，延伸到更多垂直 DTC 赛道</b>
+                <p>以相同的商品数据、自动铺货和广告目录机制，快速测试新类目。</p>
+              </div>
+              <div class="replica-card phone-case">
+                <div class="replica-visual">
+                  <div class="device-phone small">
+                    <img src="assets/reference/sleepbettermd_mobile_top.png" alt="SleepBetterMD mobile sleep site">
+                  </div>
+                </div>
+                <div>
+                  <span class="replica-tag">睡眠类目</span>
+                  <b>SleepBetterMD</b>
+                  <p>围绕睡眠改善和家居健康场景，验证细分类目需求。</p>
+                </div>
+              </div>
+              <div class="replica-card phone-case">
+                <div class="replica-visual">
+                  <div class="device-phone small">
+                    <img src="assets/reference/kokoot_mobile_raw.png" alt="Kokoot mobile pet site">
+                  </div>
+                </div>
+                <div>
+                  <span class="replica-tag">宠物类目</span>
+                  <b>Kokoot</b>
+                  <p>以宠物用品为切入，测试内容驱动型消费赛道。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h3>双方资源与能力</h3>
+            <span>Resource fit</span>
+          </div>
+
+          <div class="two-col">
+            <div class="card">
+              <h4>我们提供</h4>
+              <ul>
+                <li>国内供应链资源，以及淘宝 / 1688 等 API 商品数据接入能力。</li>
+                <li>AI 自动铺货系统，覆盖商品信息、分类、标签、SEO、商品页和目录 feed。</li>
+                <li>跨境广告投放与目录广告优化，覆盖 Meta、TikTok、Facebook、Pinterest 等渠道。</li>
+                <li>AI 营销素材生产，覆盖图片、短视频、落地页和社媒内容。</li>
+                <li>精简运营团队，降低站点启动、上新和内容生产成本。</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h4>卓悦提供</h4>
+              <ul>
+                <li>日韩美妆护肤、个护和生活方式商品供应链。</li>
+                <li>品牌授权、渠道价格、独家供应或差异化商品资源。</li>
+                <li>香港及亚洲市场品牌背书，提升供应链议价和市场信任。</li>
+                <li>客户与合作方资源，用于后续对外服务拓展。</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="model">
+          <div class="section-head">
+            <h3>试点项目的投入与分成机制</h3>
+            <span>Pilot economics</span>
+          </div>
+
+          <div class="model-grid">
+            <div class="card">
+              <h4>先以项目制启动</h4>
+              <p>
+                采用“项目制 + 独立账本 + 阶段性投入”的方式推进。每个垂直赛道作为独立项目，例如日韩美妆个护、睡眠、宠物、户外、fashion / lifestyle。
+              </p>
+              <ul>
+                <li>项目独立记录启动成本、广告费用、商品成本、物流支付和销售收入。</li>
+                <li>扣除必要成本后，按约定比例进行利润分配。</li>
+                <li>卓悦若提供关键供应链、品牌授权、渠道或客户资源，可设置资源贡献奖励或业绩抽点。</li>
+                <li>项目跑通后，再讨论合资、项目融资或更深层股权合作。</li>
+              </ul>
+            </div>
+
+            <div class="budget-box">
+              <h4>单个DTC独立站的测试预算</h4>
+              <strong>US$10K-20K</strong>
+              <p>主要用于 Meta / TikTok 等广告测试，并覆盖少量建站、素材和商品测试成本。</p>
+              <ul>
+                <li>建议周期：6-8 周。</li>
+                <li>验证指标：需求、毛利、AOV、转化率、CPA、ROAS 和放量潜力。</li>
+                <li>决策方式：数据成立则加码；不成立则复盘商品、素材或赛道。</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section solution-frame solution-ai" id="ai">
+          <div class="section-head">
+            <h3>方案二：AI 电商系统产品化投资</h3>
+            <span>AI Commerce OS</span>
+          </div>
+
+          <div class="demo-panel">
+            <h4>Demo：全自动电商系统概念展示</h4>
+            <p>
+              这套系统覆盖品牌建站、商品库、自动铺货、广告投放、AI 素材、EDM 自动化和数据复盘。它来自真实电商业务，可进一步产品化并对外服务客户。
+            </p>
+            <div class="video-frame">
+              <video controls preload="metadata" poster="assets/demo/ai_commerce_demo_image2_cover.png">
+                <source src="assets/demo/ai_commerce_demo.mp4" type="video/mp4">
+                当前浏览器不支持视频播放。
+              </video>
+            </div>
+          </div>
+
+          <div class="module-list">
+            <div class="module"><b>自动化品牌建站</b><span>快速生成品牌站框架、商品页、类目页、活动页和落地页。</span></div>
+            <div class="module"><b>自动化商品库</b><span>接入、清洗和同步商品信息、图片、价格、类目和库存。</span></div>
+            <div class="module"><b>AI 自动铺货</b><span>批量生成商品页面、分类、标签、商品集合和基础卖点。</span></div>
+            <div class="module"><b>广告投放自动化</b><span>构建广告目录，根据 CPA、ROAS 和利润阈值辅助投放决策。</span></div>
+            <div class="module"><b>AI 营销素材</b><span>生成广告图、短视频脚本、AI 视频素材和社媒内容。</span></div>
+            <div class="module"><b>AI 自动化 EDM</b><span>生成邮件内容，搭建用户分层、Flow、Campaign 和复购触达。</span></div>
+          </div>
+        </section>
+
+        <section class="section" id="go-to-market">
+          <div class="section-head">
+            <h3>对外服务客户</h3>
+            <span>Service business</span>
+          </div>
+
+          <div class="two-col">
+            <div class="card">
+              <h4>目标客户</h4>
+              <ul>
+                <li>有供应链但不懂海外 DTC 的工厂或品牌。</li>
+                <li>有品牌但缺少跨境电商团队的传统企业。</li>
+                <li>有线下渠道但希望做线上化的零售品牌。</li>
+                <li>有商品资源但缺少 AI 和增长能力的跨境卖家。</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h4>收入来源</h4>
+              <ul>
+                <li>系统部署费、月度服务费、项目咨询费。</li>
+                <li>广告代运营费、素材生产服务费。</li>
+                <li>按 GMV 或利润抽点的 success fee。</li>
+                <li>AI SaaS 订阅费或垂直解决方案授权费。</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="next">
+          <div class="section-head">
+            <h3>建议下一步</h3>
+            <span>Next steps</span>
+          </div>
+
+          <div class="next-steps">
+            <div class="next-card"><b>01 · 先碰合作意向</b><span>先和卓悦确认他们对哪些模块有真实兴趣：美妆 DTC、其他垂直赛道、AI 系统投资，或对外客户服务。</span></div>
+            <div class="next-card"><b>02 · 选择优先模块</b><span>根据卓悦的资源强项和内部诉求，挑选 1-2 个最适合先推进的合作模块。</span></div>
+            <div class="next-card"><b>03 · 再深化合作结构</b><span>在方向明确后，再细化共同投资、项目分成、合资、资源换权益或 AI 产品投资条款。</span></div>
+          </div>
+        </section>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
