@@ -800,9 +800,34 @@
     }
 
     .demo-panel h4 {
-      margin-bottom: 8px;
+      margin: 0;
       color: #fff;
       font-size: 21px;
+    }
+
+    .demo-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .demo-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(121, 255, 216, 0.30);
+      color: #79ffd8;
+      background: rgba(121, 255, 216, 0.08);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     .demo-panel p {
@@ -1249,7 +1274,10 @@
           </div>
 
           <div class="demo-panel">
-            <h4>Demo：全自动电商系统概念展示</h4>
+            <div class="demo-head">
+              <h4>Demo：全自动电商系统概念展示</h4>
+              <a class="demo-link" href="https://nextlv.ai/" target="_blank" rel="noreferrer">nextlv.ai</a>
+            </div>
             <p>
               这套系统覆盖品牌建站、商品库、自动铺货、广告投放、AI 素材、EDM 自动化和数据复盘。它来自真实电商业务，可进一步产品化并对外服务客户。
             </p>
